@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode7.2
 xcode_project: Ausgaben/Ausgaben.xcodeproj
-xcode_scheme: Ausgaben
+xcode_scheme: Ausgaben/Ausgaben
