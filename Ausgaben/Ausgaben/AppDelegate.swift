@@ -13,10 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var client: MSClient?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let appServiceUrl = NSBundle.mainBundle().objectForInfoDictionaryKey("APP_SERVICE_URL") as! String
+        client = MSClient(applicationURLString: appServiceUrl)
         return true
     }
 
@@ -42,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func applicationDidFinishLaunching(application: UIApplication) {
+        let defaults : NSUserDefaults = NSUserDefaults()
+        defaults.synchronize()
+        print(defaults.stringForKey("AZURE_APP_SERVICE"))
     }
 
     // MARK: - Core Data stack

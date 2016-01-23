@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141B77851C53CD4400796C74 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B77841C53CD4400796C74 /* AccountViewController.swift */; };
+		141B77891C53EA2600796C74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141B77881C53EA2600796C74 /* Main.storyboard */; };
+		141B778E1C53F49500796C74 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B778D1C53F49500796C74 /* ClientController.swift */; };
 		14F2933A1C445FB8005EF93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F293391C445FB8005EF93A /* AppDelegate.swift */; };
-		14F2933C1C445FB8005EF93A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2933B1C445FB8005EF93A /* ViewController.swift */; };
-		14F2933F1C445FB8005EF93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F2933D1C445FB8005EF93A /* Main.storyboard */; };
+		14F2933C1C445FB8005EF93A /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2933B1C445FB8005EF93A /* AppViewController.swift */; };
+		14F2933F1C445FB8005EF93A /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F2933D1C445FB8005EF93A /* App.storyboard */; };
 		14F293421C445FB8005EF93A /* Ausgaben.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14F293401C445FB8005EF93A /* Ausgaben.xcdatamodeld */; };
 		14F293441C445FB8005EF93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F293431C445FB8005EF93A /* Assets.xcassets */; };
 		14F293471C445FB8005EF93A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F293451C445FB8005EF93A /* LaunchScreen.storyboard */; };
@@ -36,10 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141B77841C53CD4400796C74 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		141B77881C53EA2600796C74 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		141B778D1C53F49500796C74 /* ClientController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
 		14F293361C445FB8005EF93A /* Ausgaben.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ausgaben.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F293391C445FB8005EF93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14F2933B1C445FB8005EF93A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		14F2933E1C445FB8005EF93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14F2933B1C445FB8005EF93A /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		14F2933E1C445FB8005EF93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/App.storyboard; sourceTree = "<group>"; };
 		14F293411C445FB8005EF93A /* Ausgaben.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ausgaben.xcdatamodel; sourceTree = "<group>"; };
 		14F293431C445FB8005EF93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14F293461C445FB8005EF93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141B778A1C53EBC800796C74 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14F293391C445FB8005EF93A /* AppDelegate.swift */,
+				14F2933B1C445FB8005EF93A /* AppViewController.swift */,
+				14F2933D1C445FB8005EF93A /* App.storyboard */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		141B778B1C53F16100796C74 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				141B778C1C53F19B00796C74 /* Account */,
+				141B77881C53EA2600796C74 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		141B778C1C53F19B00796C74 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				141B77841C53CD4400796C74 /* AccountViewController.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		14F2932D1C445FB8005EF93A = {
 			isa = PBXGroup;
 			children = (
@@ -104,14 +137,14 @@
 		14F293381C445FB8005EF93A /* Ausgaben */ = {
 			isa = PBXGroup;
 			children = (
-				14F293391C445FB8005EF93A /* AppDelegate.swift */,
-				14F2933B1C445FB8005EF93A /* ViewController.swift */,
-				14F2933D1C445FB8005EF93A /* Main.storyboard */,
+				141B778B1C53F16100796C74 /* Main */,
+				141B778A1C53EBC800796C74 /* App */,
 				14F293431C445FB8005EF93A /* Assets.xcassets */,
 				14F293451C445FB8005EF93A /* LaunchScreen.storyboard */,
 				14F293481C445FB8005EF93A /* Info.plist */,
 				14F293401C445FB8005EF93A /* Ausgaben.xcdatamodeld */,
 				14F2936C1C446050005EF93A /* Bridge.h */,
+				141B778D1C53F49500796C74 /* ClientController.swift */,
 			);
 			path = Ausgaben;
 			sourceTree = "<group>";
@@ -249,7 +282,8 @@
 			files = (
 				14F293471C445FB8005EF93A /* LaunchScreen.storyboard in Resources */,
 				14F293441C445FB8005EF93A /* Assets.xcassets in Resources */,
-				14F2933F1C445FB8005EF93A /* Main.storyboard in Resources */,
+				14F2933F1C445FB8005EF93A /* App.storyboard in Resources */,
+				141B77891C53EA2600796C74 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F2933C1C445FB8005EF93A /* ViewController.swift in Sources */,
+				14F2933C1C445FB8005EF93A /* AppViewController.swift in Sources */,
 				14F293421C445FB8005EF93A /* Ausgaben.xcdatamodeld in Sources */,
+				141B778E1C53F49500796C74 /* ClientController.swift in Sources */,
+				141B77851C53CD4400796C74 /* AccountViewController.swift in Sources */,
 				14F2933A1C445FB8005EF93A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,12 +348,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14F2933D1C445FB8005EF93A /* Main.storyboard */ = {
+		14F2933D1C445FB8005EF93A /* App.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				14F2933E1C445FB8005EF93A /* Base */,
 			);
-			name = Main.storyboard;
+			name = App.storyboard;
 			sourceTree = "<group>";
 		};
 		14F293451C445FB8005EF93A /* LaunchScreen.storyboard */ = {
@@ -335,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_SERVICE_URL = "https://ausgaben-einnahmen.azurewebsites.net";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -381,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_SERVICE_URL = "https://www.mdmsua.com";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -521,6 +559,7 @@
 				14F293631C445FB8005EF93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F293641C445FB8005EF93A /* Build configuration list for PBXNativeTarget "AusgabenTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +568,7 @@
 				14F293661C445FB8005EF93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F293671C445FB8005EF93A /* Build configuration list for PBXNativeTarget "AusgabenUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +577,7 @@
 				14F293691C445FB8005EF93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
