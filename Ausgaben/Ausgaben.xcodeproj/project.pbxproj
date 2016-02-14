@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141B77851C53CD4400796C74 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B77841C53CD4400796C74 /* AccountViewController.swift */; };
+		141B77851C53CD4400796C74 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B77841C53CD4400796C74 /* AccountsViewController.swift */; };
 		141B77891C53EA2600796C74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141B77881C53EA2600796C74 /* Main.storyboard */; };
-		141B778E1C53F49500796C74 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B778D1C53F49500796C74 /* ClientController.swift */; };
+		141B77921C5431C300796C74 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B77911C5431C300796C74 /* UIViewControllerExtension.swift */; };
+		141B77941C54355300796C74 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B77931C54355300796C74 /* Account.swift */; };
+		1431E6201C7093BB000B2B84 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431E61F1C7093BB000B2B84 /* ViewState.swift */; };
+		144460381C54DF7F00EE0B50 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144460371C54DF7F00EE0B50 /* AccountViewController.swift */; };
 		14F2933A1C445FB8005EF93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F293391C445FB8005EF93A /* AppDelegate.swift */; };
 		14F2933C1C445FB8005EF93A /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2933B1C445FB8005EF93A /* AppViewController.swift */; };
 		14F2933F1C445FB8005EF93A /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F2933D1C445FB8005EF93A /* App.storyboard */; };
-		14F293421C445FB8005EF93A /* Ausgaben.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14F293401C445FB8005EF93A /* Ausgaben.xcdatamodeld */; };
 		14F293441C445FB8005EF93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F293431C445FB8005EF93A /* Assets.xcassets */; };
 		14F293471C445FB8005EF93A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F293451C445FB8005EF93A /* LaunchScreen.storyboard */; };
 		14F293521C445FB8005EF93A /* AusgabenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F293511C445FB8005EF93A /* AusgabenTests.swift */; };
@@ -39,14 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		141B77841C53CD4400796C74 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		141B77841C53CD4400796C74 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		141B77881C53EA2600796C74 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		141B778D1C53F49500796C74 /* ClientController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
+		141B77911C5431C300796C74 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		141B77931C54355300796C74 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1431E61F1C7093BB000B2B84 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		144460371C54DF7F00EE0B50 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		14F293361C445FB8005EF93A /* Ausgaben.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ausgaben.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F293391C445FB8005EF93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F2933B1C445FB8005EF93A /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		14F2933E1C445FB8005EF93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/App.storyboard; sourceTree = "<group>"; };
-		14F293411C445FB8005EF93A /* Ausgaben.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ausgaben.xcdatamodel; sourceTree = "<group>"; };
 		14F293431C445FB8005EF93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14F293461C445FB8005EF93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14F293481C445FB8005EF93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +112,9 @@
 		141B778C1C53F19B00796C74 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				141B77841C53CD4400796C74 /* AccountViewController.swift */,
+				141B77841C53CD4400796C74 /* AccountsViewController.swift */,
+				141B77931C54355300796C74 /* Account.swift */,
+				144460371C54DF7F00EE0B50 /* AccountViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -142,9 +148,9 @@
 				14F293431C445FB8005EF93A /* Assets.xcassets */,
 				14F293451C445FB8005EF93A /* LaunchScreen.storyboard */,
 				14F293481C445FB8005EF93A /* Info.plist */,
-				14F293401C445FB8005EF93A /* Ausgaben.xcdatamodeld */,
 				14F2936C1C446050005EF93A /* Bridge.h */,
-				141B778D1C53F49500796C74 /* ClientController.swift */,
+				141B77911C5431C300796C74 /* UIViewControllerExtension.swift */,
+				1431E61F1C7093BB000B2B84 /* ViewState.swift */,
 			);
 			path = Ausgaben;
 			sourceTree = "<group>";
@@ -309,10 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F2933C1C445FB8005EF93A /* AppViewController.swift in Sources */,
-				14F293421C445FB8005EF93A /* Ausgaben.xcdatamodeld in Sources */,
-				141B778E1C53F49500796C74 /* ClientController.swift in Sources */,
-				141B77851C53CD4400796C74 /* AccountViewController.swift in Sources */,
+				1431E6201C7093BB000B2B84 /* ViewState.swift in Sources */,
+				141B77921C5431C300796C74 /* UIViewControllerExtension.swift in Sources */,
+				144460381C54DF7F00EE0B50 /* AccountViewController.swift in Sources */,
+				141B77851C53CD4400796C74 /* AccountsViewController.swift in Sources */,
 				14F2933A1C445FB8005EF93A /* AppDelegate.swift in Sources */,
+				141B77941C54355300796C74 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +478,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Ausgaben/Bridge.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,6 +498,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Ausgaben/Bridge.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -580,19 +590,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		14F293401C445FB8005EF93A /* Ausgaben.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				14F293411C445FB8005EF93A /* Ausgaben.xcdatamodel */,
-			);
-			currentVersion = 14F293411C445FB8005EF93A /* Ausgaben.xcdatamodel */;
-			path = Ausgaben.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 14F2932E1C445FB8005EF93A /* Project object */;
 }
