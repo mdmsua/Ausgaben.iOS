@@ -10,7 +10,9 @@ import Foundation
 
 class AccountsViewController : UITableViewController {
     
-    var accounts = [Account]();
+    var accounts = [Account]()
+    
+    var index: Int = -1
     
     var state = ViewState.Busy
     
@@ -34,7 +36,7 @@ class AccountsViewController : UITableViewController {
         client.tableWithName("Accounts").readWithCompletion { (result, error) -> Void in
             if let error = error {
                 self.state = .Standby
-                print(error)
+                self.alert(error)
             } else {
                 if let result = result {
                     if let items = result.items {
@@ -56,9 +58,7 @@ class AccountsViewController : UITableViewController {
     @IBAction func logoutButtonClicked(sender: AnyObject) {
         client.logoutWithCompletion { (error) -> Void in
             if let error = error {
-                let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.alert(error)
             } else {
                 self.performSegueWithIdentifier("App", sender: self)
             }
@@ -82,11 +82,8 @@ class AccountsViewController : UITableViewController {
         case .Ready:
             let cell:UITableViewCell = self.accountTableView.dequeueReusableCellWithIdentifier("account")! as UITableViewCell
             let account = accounts[indexPath.row]
-            let formatter = NSNumberFormatter()
-            formatter.currencyCode = "EUR"
-            formatter.numberStyle = .CurrencyStyle
             cell.textLabel?.text = account.name
-            cell.detailTextLabel?.text = formatter.stringFromNumber(account.balance)
+            cell.detailTextLabel?.text = account.formattedBalance
             cell.detailTextLabel?.textColor = account.balance > 0 ? UIColor.greenColor() : account.balance == 0 ? UIColor.grayColor() : UIColor.redColor()
             return cell
         default:
@@ -94,4 +91,12 @@ class AccountsViewController : UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        self.index = indexPath.row
+        return indexPath
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! PaymentsViewController).account = self.accounts[self.index]
+    }
 }

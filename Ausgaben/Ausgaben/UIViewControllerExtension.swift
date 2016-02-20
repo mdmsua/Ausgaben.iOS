@@ -13,5 +13,11 @@ extension UIViewController {
             return (UIApplication.sharedApplication().delegate as! AppDelegate).client!
         }
     }
+    
+    func alert(error: NSError, handler: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
+        let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: handler))
+        self.presentViewController(alertController, animated: true, completion: completion)
+    }
 
 }

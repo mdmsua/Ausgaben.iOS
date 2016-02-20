@@ -29,5 +29,15 @@ struct Account {
         self.id = id
         self.name = name
         self.balance = balance
+        
+    }
+    
+    var formattedBalance : String {
+        get {
+            let formatter = NSNumberFormatter()
+            formatter.currencyCode = "EUR"
+            formatter.numberStyle = .CurrencyStyle
+            return formatter.stringFromNumber(self.balance)!
+        }
     }
 }
