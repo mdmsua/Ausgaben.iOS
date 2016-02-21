@@ -8,7 +8,14 @@
 
 import UIKit
 
-class AppViewController: ClientController {
+class AppViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if (client.currentUser != nil) {
+            self.performSegueWithIdentifier("Main", sender: self)
+        }
+    }
     
     func loginWithProvider(provider: String) {
         client.loginWithProvider(provider, controller: self, animated: true, completion: {
