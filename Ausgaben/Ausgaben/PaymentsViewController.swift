@@ -81,7 +81,7 @@ class PaymentsViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("payment")! as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         let section = self.sections[indexPath.section]
         let payments = self.payments[section]
         let payment = payments![indexPath.row]

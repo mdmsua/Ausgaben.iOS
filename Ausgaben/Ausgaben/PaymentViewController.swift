@@ -15,9 +15,9 @@ class PaymentViewController : UITableViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIButton!
     
-    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
+    @IBAction func doneButtonClicked(sender: UIButton) {
         doneButton.enabled = false
         if let payment = self.payment {
             self.client.tableWithName("Payments").insert(payment.serialize()) { (data, error) -> Void in
@@ -58,6 +58,7 @@ class PaymentViewController : UITableViewController {
                 formatter.currencyCode = "EUR"
                 formatter.numberStyle = .CurrencyStyle
                 self.amountLabel.text = formatter.stringFromNumber(amount)
+                self.doneButton.enabled = (self.payment?.valid)!
         }
     }
     

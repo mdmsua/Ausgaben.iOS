@@ -8,22 +8,31 @@
 
 import Foundation
 
-class AccountViewController : UIViewController {
+class AccountViewController : UITableViewController {
+    
+    var balance: Double? = 0.0
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var balanceTextField: UITextField!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var doneButton: UIButton!
     
+    @IBOutlet weak var balanceLabel: UILabel!
     @IBAction func nameEditingChanged(sender: UITextField) {
-        updateDoneButton(sender.text, balance: balanceTextField.text!)
+        updateDoneButton(sender.text)
     }
     
-    @IBAction func balanceEditingChanged(sender: UITextField) {
-        updateDoneButton(nameTextField.text!, balance: sender.text)
+    @IBAction func unwindFromAmount(sender: UIStoryboardSegue) {
+        if let amountViewController = sender.sourceViewController as? AccountAmountViewController {
+            self.balance = amountViewController.amount
+            let formatter = NSNumberFormatter()
+            formatter.currencyCode = "EUR"
+            formatter.numberStyle = .CurrencyStyle
+            balanceLabel.text = formatter.stringFromNumber(self.balance!)
+            updateDoneButton(self.nameTextField.text)
+        }
     }
     
-    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
-        let account : [NSObject: AnyObject] = ["name": nameTextField.text!, "balance": Double(balanceTextField.text!)!]
+    @IBAction func doneButtonClicked(sender: UIButton) {
+        let account : [NSObject: AnyObject] = ["name": nameTextField.text!, "balance": self.balance!]
         client.tableWithName("Accounts").insert(account) { (data, error) -> () in
             if let error = error {
                 self.alert(error)
@@ -35,11 +44,11 @@ class AccountViewController : UIViewController {
     }
     
     override func viewDidLoad() {
-        doneButton.enabled = false
+        self.doneButton.enabled = false
     }
     
-    func updateDoneButton(name: String!, balance: String!) {
-        doneButton.enabled = name.characters.count > 0 && Double(balance) != nil
+    func updateDoneButton(name: String!) {
+        self.doneButton.enabled = name.characters.count > 0 && self.balance != 0.0
     }
     
 }

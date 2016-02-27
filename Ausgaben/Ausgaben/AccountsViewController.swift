@@ -14,20 +14,15 @@ class AccountsViewController : UITableViewController {
     
     var index: Int = -1
     
-    var state = ViewState.Busy
-    
     @IBOutlet var accountTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = refreshControl
+        self.refreshControl!.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.accountTableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.state = .Busy
-        self.accountTableView.reloadData()
         loadAccounts({() -> () in});
     }
     
@@ -35,7 +30,6 @@ class AccountsViewController : UITableViewController {
         self.accounts.removeAll()
         client.tableWithName("Accounts").readWithCompletion { (result, error) -> Void in
             if let error = error {
-                self.state = .Standby
                 self.alert(error)
             } else {
                 if let result = result {
@@ -45,7 +39,6 @@ class AccountsViewController : UITableViewController {
                                 self.accounts.append(account)
                             }
                         }
-                        self.state = .Ready
                         self.accounts.sortInPlace() { $0.name < $1.name }
                     }
                 }
@@ -72,31 +65,28 @@ class AccountsViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.state == .Ready ? accounts.count : 1;
+        return accounts.count;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        switch self.state {
-        case .Busy:
-            return self.accountTableView.dequeueReusableCellWithIdentifier("default")! as UITableViewCell
-        case .Ready:
-            let cell:UITableViewCell = self.accountTableView.dequeueReusableCellWithIdentifier("account")! as UITableViewCell
-            let account = accounts[indexPath.row]
-            cell.textLabel?.text = account.name
-            cell.detailTextLabel?.text = account.formattedBalance
-            cell.detailTextLabel?.textColor = account.balance > 0 ? UIColor.greenColor() : account.balance == 0 ? UIColor.grayColor() : UIColor.redColor()
-            return cell
-        default:
-            return self.accountTableView.dequeueReusableCellWithIdentifier("empty")! as UITableViewCell
+        if self.accounts.count == 0 {
+            return UITableViewCell()
         }
+        let cell:UITableViewCell = self.accountTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let account = accounts[indexPath.row]
+        cell.textLabel?.text = account.name
+        cell.detailTextLabel?.text = account.formattedBalance
+        return cell
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) -> Void {
         self.index = indexPath.row
-        return indexPath
+        self.performSegueWithIdentifier("Payments", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        (segue.destinationViewController as! PaymentsViewController).account = self.accounts[self.index]
+        if let paymentsViewController = segue.destinationViewController as? PaymentsViewController {
+            paymentsViewController.account = self.accounts[self.index]
+        }
     }
 }

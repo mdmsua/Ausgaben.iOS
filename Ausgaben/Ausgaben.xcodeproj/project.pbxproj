@@ -21,6 +21,9 @@
 		14855B5B1C7877DA007C12BC /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14855B5A1C7877DA007C12BC /* Picker.swift */; };
 		14855B5D1C787AFA007C12BC /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14855B5C1C787AFA007C12BC /* Payment.swift */; };
 		14855B651C78C7CA007C12BC /* PaymentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14855B641C78C7CA007C12BC /* PaymentEntry.swift */; };
+		148CD1691C7D8E15007AFF95 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148CD1671C7D8E15007AFF95 /* Fabric.framework */; };
+		148CD16A1C7D8E15007AFF95 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148CD1681C7D8E15007AFF95 /* Crashlytics.framework */; };
+		14CCCE5C1C823F5200BFFF59 /* AccountAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CCCE5B1C823F5200BFFF59 /* AccountAmountViewController.swift */; };
 		14F2933A1C445FB8005EF93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F293391C445FB8005EF93A /* AppDelegate.swift */; };
 		14F2933C1C445FB8005EF93A /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F2933B1C445FB8005EF93A /* AppViewController.swift */; };
 		14F2933F1C445FB8005EF93A /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F2933D1C445FB8005EF93A /* App.storyboard */; };
@@ -63,6 +66,9 @@
 		14855B5A1C7877DA007C12BC /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		14855B5C1C787AFA007C12BC /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		14855B641C78C7CA007C12BC /* PaymentEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentEntry.swift; sourceTree = "<group>"; };
+		148CD1671C7D8E15007AFF95 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		148CD1681C7D8E15007AFF95 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		14CCCE5B1C823F5200BFFF59 /* AccountAmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAmountViewController.swift; sourceTree = "<group>"; };
 		14F293361C445FB8005EF93A /* Ausgaben.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ausgaben.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F293391C445FB8005EF93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F2933B1C445FB8005EF93A /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F2936F1C4462F6005EF93A /* MicrosoftAzureMobile.framework in Frameworks */,
+				148CD1691C7D8E15007AFF95 /* Fabric.framework in Frameworks */,
+				148CD16A1C7D8E15007AFF95 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +143,7 @@
 				141B77841C53CD4400796C74 /* AccountsViewController.swift */,
 				141B77931C54355300796C74 /* Account.swift */,
 				144460371C54DF7F00EE0B50 /* AccountViewController.swift */,
+				14CCCE5B1C823F5200BFFF59 /* AccountAmountViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -232,6 +241,8 @@
 		14F2936D1C44619F005EF93A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				148CD1681C7D8E15007AFF95 /* Crashlytics.framework */,
+				148CD1671C7D8E15007AFF95 /* Fabric.framework */,
 				14F2936E1C4462F6005EF93A /* MicrosoftAzureMobile.framework */,
 			);
 			name = Frameworks;
@@ -247,6 +258,7 @@
 				14F293321C445FB8005EF93A /* Sources */,
 				14F293331C445FB8005EF93A /* Frameworks */,
 				14F293341C445FB8005EF93A /* Resources */,
+				148CD1661C7D8DC4007AFF95 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -365,6 +377,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		148CD1661C7D8DC4007AFF95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 7b83abb01ab081108416d14995273e3039ef09af 7b50aee31ec9205e2ee3a12a9a62cf00a67f4d0d8abd4ae52ca2f5ce51c65a6b";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14F293321C445FB8005EF93A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -374,6 +402,7 @@
 				14855B5B1C7877DA007C12BC /* Picker.swift in Sources */,
 				1431E6201C7093BB000B2B84 /* ViewState.swift in Sources */,
 				141B77921C5431C300796C74 /* UIViewControllerExtension.swift in Sources */,
+				14CCCE5C1C823F5200BFFF59 /* AccountAmountViewController.swift in Sources */,
 				144460381C54DF7F00EE0B50 /* AccountViewController.swift in Sources */,
 				147044B31C791B7200691EC3 /* AmountViewController.swift in Sources */,
 				144522CE1C710AC800920F7F /* CategoriesViewController.swift in Sources */,
