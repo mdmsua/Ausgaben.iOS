@@ -91,11 +91,12 @@ class PaymentsViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.payments.count
+        let key = self.sections[section]
+        return self.payments[key]!.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.payments.count
+        return self.sections.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
