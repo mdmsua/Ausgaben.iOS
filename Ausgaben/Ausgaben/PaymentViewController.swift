@@ -15,18 +15,18 @@ class PaymentViewController : UITableViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
-    @IBAction func doneButtonClicked(sender: UIButton) {
-        doneButton.enabled = false
+    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
         if let payment = self.payment {
+            let overlay = self.presentActivityIndicatorOverlay()
             self.client.tableWithName("Payments").insert(payment.serialize()) { (data, error) -> Void in
                 if let error = error {
                     self.alert(error)
-                    self.doneButton.enabled = false
                 } else {
                     self.navigationController?.popViewControllerAnimated(true)
                 }
+                overlay.removeFromSuperview();
             }
         }
     }

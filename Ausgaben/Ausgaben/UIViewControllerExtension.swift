@@ -20,4 +20,14 @@ extension UIViewController {
         self.presentViewController(alertController, animated: true, completion: completion)
     }
 
+    func presentActivityIndicatorOverlay() -> UIView {
+        let overlayView = UIView(frame: UIScreen.mainScreen().bounds)
+        overlayView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        activityIndicatorView.center = overlayView.center
+        activityIndicatorView.startAnimating()
+        overlayView.addSubview(activityIndicatorView)
+        self.navigationController?.view.addSubview(overlayView)
+        return overlayView
+    }
 }

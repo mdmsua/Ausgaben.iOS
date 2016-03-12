@@ -18,6 +18,8 @@ class PaymentsViewController : UITableViewController {
         return self.payments.map { $0.0 }
     }
     
+    private var busy = false;
+    
     @IBOutlet weak var paymentsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,11 +28,18 @@ class PaymentsViewController : UITableViewController {
         self.handleRefresh(self.refreshControl!)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if !busy {
+            self.handleRefresh(self.refreshControl!)
+        }
+    }
+    
     func handleRefresh(sender: UIRefreshControl) {
-        self.payments.removeAll()
-        sender.beginRefreshing()
         if let account = self.account {
-            let query = "$filter=(accountId%20eq%20guid'\(account.id)')&$expand=Category"
+            self.busy = true
+            self.payments.removeAll()
+            sender.beginRefreshing()
+            let query = "$filter=(accountId%20eq%20guid'\(account.id)')&$expand=category"
             self.client.tableWithName("Payments").readWithQueryString(query) { (result, error) -> Void in
                 if let error = error {
                     self.alert(error)
@@ -47,7 +56,9 @@ class PaymentsViewController : UITableViewController {
                         }
                     }
                     self.paymentsTableView.reloadData()
+
                 }
+                self.busy = false
                 sender.endRefreshing()
             }
         }

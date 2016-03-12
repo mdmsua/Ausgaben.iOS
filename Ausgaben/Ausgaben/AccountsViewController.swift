@@ -14,21 +14,27 @@ class AccountsViewController : UITableViewController {
     
     var index: Int = -1
     
+    private var busy = false
+    
     @IBOutlet var accountTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl!.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.accountTableView.reloadData()
+        self.handleRefresh(self.refreshControl!)
     }
     
     override func viewDidAppear(animated: Bool) {
-        loadAccounts({() -> () in});
+        if !busy {
+            self.handleRefresh(self.refreshControl!)
+        }
     }
     
-    func loadAccounts(callback: () -> ()) {
+    func handleRefresh(sender: UIRefreshControl) {
+        sender.beginRefreshing()
         self.accounts.removeAll()
-        client.tableWithName("Accounts").readWithCompletion { (result, error) -> Void in
+        self.busy = true
+        client.tableWithName("Accounts").readWithQueryString("$orderby=name") { (result, error) -> Void in
             if let error = error {
                 self.alert(error)
             } else {
@@ -39,12 +45,12 @@ class AccountsViewController : UITableViewController {
                                 self.accounts.append(account)
                             }
                         }
-                        self.accounts.sortInPlace() { $0.name < $1.name }
                     }
                 }
             }
+            sender.endRefreshing()
+            self.busy = false
             self.accountTableView.reloadData()
-            callback()
         }
     }
     
@@ -55,12 +61,6 @@ class AccountsViewController : UITableViewController {
             } else {
                 self.performSegueWithIdentifier("App", sender: self)
             }
-        }
-    }
-    
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        loadAccounts { () -> () in
-            refreshControl.endRefreshing()
         }
     }
     

@@ -13,7 +13,7 @@ class AccountViewController : UITableViewController {
     var balance: Double? = 0.0
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var balanceLabel: UILabel!
     @IBAction func nameEditingChanged(sender: UITextField) {
@@ -31,7 +31,7 @@ class AccountViewController : UITableViewController {
         }
     }
     
-    @IBAction func doneButtonClicked(sender: UIButton) {
+    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
         let account : [NSObject: AnyObject] = ["name": nameTextField.text!, "balance": self.balance!]
         client.tableWithName("Accounts").insert(account) { (data, error) -> () in
             if let error = error {
