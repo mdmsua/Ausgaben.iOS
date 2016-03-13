@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hNH-LH-ZkT">
-                                <rect key="frame" x="163.5" y="211" width="273" height="178"/>
+                                <rect key="frame" x="164" y="166.5" width="273" height="267"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhC-hk-9xx" userLabel="facebookButton">
                                         <rect key="frame" x="0.0" y="0.0" width="273" height="89"/>
@@ -36,8 +36,16 @@
                                             <action selector="facebookButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCw-9W-3D5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-lD-Ysx" userLabel="twitterButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIO-lm-SFb" userLabel="googleButton">
                                         <rect key="frame" x="0.0" y="89" width="273" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                        <state key="normal" title="Google"/>
+                                        <connections>
+                                            <action selector="googleButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jia-mN-9oI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-lD-Ysx" userLabel="twitterButton">
+                                        <rect key="frame" x="0.0" y="178" width="273" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                         <state key="normal" title="Twitter"/>
                                         <connections>
@@ -49,8 +57,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hNH-LH-ZkT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6co-8R-Ord"/>
-                            <constraint firstItem="hNH-LH-ZkT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EWb-3o-psG"/>
+                            <constraint firstItem="hNH-LH-ZkT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Dac-vS-wsX"/>
+                            <constraint firstItem="hNH-LH-ZkT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bKn-DO-tud"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pZT-9J-bkJ"/>

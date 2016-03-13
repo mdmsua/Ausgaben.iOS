@@ -12,7 +12,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="App" storyboardName="App" id="Jom-u7-BsD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItV-eM-uJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612.5" y="-452"/>
+            <point key="canvasLocation" x="1417.5" y="-466"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="QHA-W3-GLW">
@@ -137,7 +137,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOK-4Q-tnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="-760"/>
+            <point key="canvasLocation" x="1689" y="-90"/>
         </scene>
         <!--Payment-->
         <scene sceneID="WnF-zI-e2T">
@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAA-af-nK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744" y="-760"/>
+            <point key="canvasLocation" x="2393" y="-90"/>
         </scene>
         <!--Neues Konto-->
         <scene sceneID="10C-UC-fjR">
@@ -364,7 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1G-Ga-A8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744" y="-90"/>
+            <point key="canvasLocation" x="904" y="716"/>
         </scene>
         <!--Zahlungsart-->
         <scene sceneID="1TU-o1-cLd">
@@ -400,7 +400,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCg-nh-wpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EpO-ce-7dV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-760"/>
+            <point key="canvasLocation" x="3111" y="-90"/>
         </scene>
         <!--Betrag-->
         <scene sceneID="Uyc-kb-M5a">
@@ -439,7 +439,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNT-wp-Iya" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6nP-SO-rR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-90"/>
+            <point key="canvasLocation" x="1689" y="716"/>
         </scene>
         <!--Betrag-->
         <scene sceneID="Dh6-Yj-mtm">
@@ -478,7 +478,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xN-L2-QmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6IX-rE-GRc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3226" y="-81"/>
+            <point key="canvasLocation" x="2393" y="716"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="har-wB-WvS">

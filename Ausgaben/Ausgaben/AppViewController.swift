@@ -18,16 +18,14 @@ class AppViewController: UIViewController {
     }
     
     func loginWithProvider(provider: String) {
-        client.loginWithProvider(provider, controller: self, animated: true, completion: {
-            (user, error) -> () in
+        client.loginWithProvider(provider, controller: self, animated: true) {
+            (user, error) in
             if let error = error {
-                let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.alert(error)
             } else {
                 self.performSegueWithIdentifier("Main", sender: self)
             }
-        })
+        }
     }
 
     @IBAction func facebookButtonClicked(sender: UIButton) {
@@ -38,5 +36,8 @@ class AppViewController: UIViewController {
         loginWithProvider("twitter")
     }
 
+    @IBAction func googleButtonClicked(sender: UIButton) {
+        loginWithProvider("google")
+    }
 }
 
